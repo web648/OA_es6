@@ -4,7 +4,13 @@ import home from '@/components/home'
 
 Vue.use(Router)
 
-export default new Router({
+
+import page1 from '../views/page/page1'
+// import myHeader from './views'
+// export default new Router({
+
+// })
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -12,4 +18,6 @@ export default new Router({
       component: home
     }
   ]
-})
+});
+
+export default router

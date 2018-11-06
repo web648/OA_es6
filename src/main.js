@@ -3,8 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import './assets/css/common.css'
+import components from './components/'  //注册 components 下的组件
 
 Vue.config.productionTip = false
+
+
+
+
+
+Object.keys(components).forEach((key) => {
+  var name = key.replace(/(\w)/, (v) => v.toUpperCase()) //首字母大写
+  Vue.component(`v${name}`, components[key])
+})
+
 
 /* eslint-disable no-new */
 new Vue({
