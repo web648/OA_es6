@@ -194,3 +194,10 @@ td,
 th {
   padding: 0;
 }
+h1 {
+  text-align: center;
+}
+.active {
+  color: #fff !important;
+  background: yellowgreen !important;
+}
