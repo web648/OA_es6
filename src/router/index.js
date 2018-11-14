@@ -5,24 +5,20 @@ import home from '@/components/home'
 Vue.use(Router)
 
 
-import page1 from '../views/page/page1'
-import aboutUs from '../views/publice/about/aboutUs'
-import callme from '../views/publice/about/callme'
-import setting from '../views/publice/setting/setting'
-import other from '../views/publice/other/other'
+import homePage from '../views/publice/navItem/homePage.vue'
+import personalLetter from '../views/publice/navItem/personalLetter.vue'
+import toFind from '../views/publice/navItem/toFind.vue'
+import user from '../views/publice/navItem/user.vue'
 import login from '../views/publice/login/login'
 import register from '../views/publice/login/register'
 import nodata from '../views/publice/nodata'
 
 
+// export default new Router({})
 
-// import myHeader from './views'
-// export default new Router({
-
-// })
 const router = new Router({
   mode: 'history',
-  linkActiveClass:'active',
+  // linkActiveClass:'active',
   routes: [
     {
       path: '/',
@@ -30,21 +26,21 @@ const router = new Router({
       component: home
     },
     {
-      path: '/aboutUs',
-      name: 'aboutUs',
-      component: aboutUs,
-      children:[
-        {
-          path: '/aboutUs/callme',
-          name: 'callme',
-          component: callme
-        }
-      ]
+      path: '/homePage',
+      name: 'homePage',
+      component: homePage,
+      // children:[
+      //   {
+      //     path: '',
+      //     name: '',
+      //     component: ''
+      //   }
+      // ]
     },
     {
-      path: '/setting',
-      name: 'setting',
-      component: setting,
+      path: '/personalLetter',
+      name: 'personalLetter',
+      component: personalLetter,
       beforeEnter: (to, from, next) => {
         // ...
         alert("先登录");
@@ -52,9 +48,14 @@ const router = new Router({
       }
     },
     {
-      path: '/other',
-      name: 'other',
-      component: other
+      path: '/toFind',
+      name: 'toFind',
+      component: toFind
+    },
+    {
+      path: '/user',
+      name: 'user',
+      component: user,
     },
     {
       path: '/login',

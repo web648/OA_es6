@@ -1,12 +1,11 @@
 <template>
     <div class="nav_list">
         <slot>
-            <ul>
-                <router-link to="aboutUs" tag="li">关于</router-link>
-                <!-- <router-link to="callme" tag="li">联系</router-link> -->
-                <router-link to="/" tag="li" exact>主页</router-link>
-                <router-link to="setting" tag="li">设置</router-link>
-                <router-link to="other" tag="li">其他</router-link>
+            <ul class="nav_fixed">
+                <router-link to="toFind" tag="li" class="icon icon_finder">发现</router-link>
+                <router-link to="/" tag="li" exact class="icon icon_home" style="color:#f60;">主页</router-link>
+                <router-link to="personalLetter" tag="li" class="icon icon_personalLetter">私信 <i class="ico_num"></i></router-link>
+                <router-link to="user" tag="li" class="icon icon_me">我</router-link>
             </ul>
         </slot>
     </div>
@@ -25,23 +24,34 @@
     }
 </script>
 
-<style scoped>
-    .nav_list{
-        display: block;
-        width: 100%;
-        position: fixed;
-        left:0;
-        bottom: 0;
-        /* display: flex;  */
-    }
-    .nav_list li{
-        /* flex: 1; */
-        width: 25%;
+<style scoped lang="less">
+ .nav_fixed{
+     display: flex;
+     width: 100%;
+     border-top: 1px solid #e5e5e5;
+     padding-top: .15rem;
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     li{
+        flex: 1;
+        justify-content: center;
         text-align: center;
-        float: left;
-        /* justify-content: space-between; */
-        color: gray;
-        padding: 10px 0;
-    }
+        cursor: pointer;
+        overflow: hidden;
+        padding-bottom: 0.1rem;
+        i{
+            display: block;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            right: .55rem;
+            width: .15rem;
+            height: .15rem;
+            border-radius: 50%;
+            background: red;
+        }
+     }
+ }
 </style>
 

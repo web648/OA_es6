@@ -13,6 +13,7 @@
 
         <i @click="cmt_save($event)" v-show="cmt_show || cmt_show1 " :name="cmt_type">保存</i>
         <i @click="cmt_close" v-show="cmt_show || cmt_show1">取消</i>
+        <mt-button @click="test_fn()" size="large" type="primary">按钮</mt-button>
       </div>
 
   </div>
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+  import { Toast, MessageBox } from 'mint-ui'
 export default {
   name: 'test',
   data () {
@@ -65,6 +67,12 @@ export default {
       this.cmt_show1 = false;
       this.cmt_text = "";
       this.cmt_text1 = "";
+    },
+    test_fn(){
+            Toast("MintUi引入成功");
+            //  MessageBox.confirm('确定执行此操作?').then(action => {
+            //   alert(12111);
+            // });
     }
   }
 }

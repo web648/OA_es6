@@ -1,28 +1,30 @@
 <template>
     <div class="my_header">
-           <span>我是公共头部</span>
-           <span class="login">
-               <router-link tag="i" to="login">登录</router-link>
-               <router-link tag="i" to="register">注册</router-link>
-
-           </span> 
+            <mt-header fixed title="标题过长会隐藏后面的内容啊哈哈哈哈">
+                    <router-link to="/" slot="left">
+                      <mt-button icon="back"></mt-button>
+                    </router-link>
+                    <mt-button icon="more" slot="right"></mt-button>
+            </mt-header>
     </div>
 </template>
 
 <script>
+    import { Actionsheet } from "mint-ui"
  export default {
      data(){
          return{
 
          }
-     }
+     },
+     methods:{
+
+     },
+    //  component(Actionsheet.name, Actionsheet)
  }
 </script>
 
 <style scoped>
     .my_header{
-        background: yellowgreen;
-        padding: 10px 0;
-        text-align: center;
     }
 </style>

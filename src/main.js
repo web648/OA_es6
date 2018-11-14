@@ -3,12 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// import ElementUI from 'element-ui';
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
 import './assets/css/common.css'
+import './assets/css/font.css'
 import components from './components/'  //注册 components 下的组件
 
+// import { Toast, MessageBox } from 'mint-ui';   //全局引入贼不舒服
 Vue.config.productionTip = false
-
-
+// Vue.use(ElementUI);
+Vue.use(MintUI)
 
 
 
