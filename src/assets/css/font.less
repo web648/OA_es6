@@ -20,16 +20,14 @@
     -moz-osx-font-smoothing: grayscale;
   }
 @nav_iconSize:.6rem;
-@nav_iconPt:.65rem;
+@nav_iconPt:.15rem;
 .icon_finder{  
     position: relative;
     padding-top: @nav_iconPt;
     &::before{
         content: "\e669";
         font-size: @nav_iconSize;
-        position: absolute;
-        top: 0;
-        left: .66rem;
+        display: block;
     }
 }
 .icon_home{  
@@ -38,9 +36,7 @@
     &::before{
         content: "\e621";
         font-size: @nav_iconSize;
-        position: absolute;
-        top: 0;
-        left: .645rem;
+        display: block;
     }
 }
 .icon_personalLetter{  
@@ -49,9 +45,8 @@
     &::before{
         content: "\e665";
         font-size: @nav_iconSize;
-        position: absolute;
-        top: 0;
-        left: .66rem;
+        display: block;
+        position: relative;
     }
 }
 .icon_me{  
@@ -60,8 +55,6 @@
     &::before{
         content: "\e63f";
         font-size: @nav_iconSize;
-        position: absolute;
-        top: 0;
-        left: .66rem;
+        display: block;
     }
 }

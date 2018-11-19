@@ -19,45 +19,38 @@
 }
 .icon_finder {
   position: relative;
-  padding-top: 0.65rem;
+  padding-top: 0.15rem;
 }
 .icon_finder::before {
   content: "\e669";
   font-size: 0.6rem;
-  position: absolute;
-  top: 0;
-  left: .66rem;
+  display: block;
 }
 .icon_home {
   position: relative;
-  padding-top: 0.65rem;
+  padding-top: 0.15rem;
 }
 .icon_home::before {
   content: "\e621";
   font-size: 0.6rem;
-  position: absolute;
-  top: 0;
-  left: .645rem;
+  display: block;
 }
 .icon_personalLetter {
   position: relative;
-  padding-top: 0.65rem;
+  padding-top: 0.15rem;
 }
 .icon_personalLetter::before {
   content: "\e665";
   font-size: 0.6rem;
-  position: absolute;
-  top: 0;
-  left: .66rem;
+  display: block;
+  position: relative;
 }
 .icon_me {
   position: relative;
-  padding-top: 0.65rem;
+  padding-top: 0.15rem;
 }
 .icon_me::before {
   content: "\e63f";
   font-size: 0.6rem;
-  position: absolute;
-  top: 0;
-  left: .66rem;
+  display: block;
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <v-myHeader></v-myHeader>
+    <!-- <v-myHeader></v-myHeader> -->
 
     <router-view></router-view>
     

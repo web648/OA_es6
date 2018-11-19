@@ -2,9 +2,9 @@
     <div class="nav_list">
         <slot>
             <ul class="nav_fixed">
-                <router-link to="toFind" tag="li" class="icon icon_finder">发现</router-link>
                 <router-link to="/" tag="li" exact class="icon icon_home" style="color:#f60;">主页</router-link>
                 <router-link to="personalLetter" tag="li" class="icon icon_personalLetter">私信 <i class="ico_num"></i></router-link>
+                <router-link to="toFind" tag="li" class="icon icon_finder">发现</router-link>
                 <router-link to="user" tag="li" class="icon icon_me">我</router-link>
             </ul>
         </slot>
@@ -43,13 +43,13 @@
         i{
             display: block;
             color: #fff;
-            position: absolute;
-            top: 0;
-            right: .55rem;
-            width: .15rem;
-            height: .15rem;
+            width: .12rem;
+            height: .12rem;
             border-radius: 50%;
             background: red;
+            position: absolute;
+            top: .1rem;
+            right: 35%;
         }
      }
  }

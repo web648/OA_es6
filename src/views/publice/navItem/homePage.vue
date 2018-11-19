@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="centent">
         <h1>aboutUs</h1>
-        <router-view></router-view>
+        <!-- <router-view></router-view> -->
     </div>
 </template>
 

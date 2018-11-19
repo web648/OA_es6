@@ -201,3 +201,15 @@ h1 {
   color: #fff !important;
   background: yellowgreen !important;
 }
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clear_both {
+  clear: both;
+}
+.content {
+  padding: 0.3rem 0.5rem;
+}
