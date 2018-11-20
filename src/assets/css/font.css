@@ -54,3 +54,12 @@
   font-size: 0.6rem;
   display: block;
 }
+.icon_meun {
+  position: relative;
+}
+.icon_meun::before {
+  content: "\e66a";
+  font-size: 0.6rem;
+  position: absolute;
+  top: -0.1rem;
+}

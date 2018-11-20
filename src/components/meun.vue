@@ -1,6 +1,7 @@
 <template>
-  <div>
-      <div class="meun" hidden>
+  <div class="meun">
+      <li class="icon icon_meun" @click="show_meun()"></li>
+      <div class="meun_box" v-show="is_show">
           <div class="user">
               <img src="" alt="user-img">
               <span>游戏卿年</span>
@@ -24,8 +25,6 @@
               <router-link to="" tag="li">我的收藏</router-link>
               <router-link to="" tag="li">吐槽反馈</router-link>
               <router-link to="" tag="li">系统设置</router-link>
-
-
           </ul>
       </div>
 
@@ -38,16 +37,31 @@
 export default {
   data () {
     return {
-
+        is_show:false,
     }
   },
   methods:{
-    
+    show_meun(){
+        console.log(this.is_show);
+        this.is_show = this.is_show== false ? true : false; 
+    }
   }
 }
 </script>
 
 <style scoped lang="less">
-
+.meun{
+    position: relative;
+    // padding-right: .3rem;
+    .meun_box{
+        width: 7rem;
+        height: auto;
+        position: absolute;
+        top: -0.3rem;
+        left: -0.3rem;
+        z-index: 99;
+        background: #e5e5e5;
+    }
+}
 
 </style>
