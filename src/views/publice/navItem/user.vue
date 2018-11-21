@@ -2,7 +2,7 @@
     <div>
     <h1>setting</h1>
 
-            <v-myHeader></v-myHeader>
+            <!-- <v-myHeader></v-myHeader> -->
 
     </div>
 </template>

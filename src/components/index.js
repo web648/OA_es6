@@ -1,4 +1,5 @@
 import header from './header'
-import nav from './nav'
-import meun from './meun'
-export default{ header, nav, meun  }
+import nav from './bottom_nav'
+import meun from './aside_meun'
+import banner from './banner'
+export default{ header, banner, meun, nav }

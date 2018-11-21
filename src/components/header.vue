@@ -1,12 +1,10 @@
 <template>
-    <div class="my_header">
-            <mt-header fixed title="标题过长会隐藏后面的内容啊哈哈哈哈">
-                    <router-link to="/" slot="left">
-                      <mt-button icon="back"></mt-button>
-                    </router-link>
-                    <mt-button icon="more" slot="right"></mt-button>
-            </mt-header>
-    </div>
+    <header>
+      <ul class="head_list">
+        <v-meun></v-meun>
+        <router-link to="" tag="li"  v-for="item in head_nav" :key="item.key" :data-id="item.value">{{ item.name }}</router-link>
+      </ul>
+    </header>
 </template>
 
 <script>
@@ -14,7 +12,12 @@
  export default {
      data(){
          return{
-
+            head_nav:[
+                {name:"端游专区",value:"1"},
+                {name:"手游专区",value:"2"},
+                {name:"微端专区",value:"3"},
+                // {name:"待定",value:""},
+            ]
          }
      },
      methods:{
@@ -24,7 +27,28 @@
  }
 </script>
 
-<style scoped>
-    .my_header{
+<style scoped lang="less">
+header{
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    padding: 0 .3rem;
+    background: #fff;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    .head_list{
+        display: flex;
+        li{
+        flex: 1;
+        justify-content: center;
+        text-align: center;
+        &:nth-of-type(1){
+            padding-left: .5rem;
+        }
+        }
     }
+}
 </style>
