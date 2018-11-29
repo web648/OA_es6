@@ -5,7 +5,7 @@ import home from '@/components/home'
 Vue.use(Router)
 
 
-import homePage from '../views/publice/navItem/homePage.vue'
+import homeContent from '../views/publice/navItem/homeContent.vue'
 import personalLetter from '../views/publice/navItem/personalLetter.vue'
 import toFind from '../views/publice/navItem/toFind.vue'
 import user from '../views/publice/navItem/user.vue'
@@ -26,9 +26,9 @@ const router = new Router({
       component: home
     },
     {
-      path: '/homePage',
-      name: 'homePage',
-      component: homePage,
+      path: '/homeContent',
+      name: 'homeContent',
+      component: homeContent,
       // children:[
       //   {
       //     path: '',
