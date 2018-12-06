@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'iconfont';
   /* project id 916833 */
-  src: url('//at.alicdn.com/t/font_916833_qfmf4z63os.eot');
-  src: url('//at.alicdn.com/t/font_916833_qfmf4z63os.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_916833_qfmf4z63os.woff') format('woff'), url('//at.alicdn.com/t/font_916833_qfmf4z63os.ttf') format('truetype'), url('//at.alicdn.com/t/font_916833_qfmf4z63os.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_916833_nzilfix9i7.eot');
+  src: url('//at.alicdn.com/t/font_916833_nzilfix9i7.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_916833_nzilfix9i7.woff') format('woff'), url('//at.alicdn.com/t/font_916833_nzilfix9i7.ttf') format('truetype'), url('//at.alicdn.com/t/font_916833_nzilfix9i7.svg#iconfont') format('svg');
 }
 .icon {
   font-family: "iconfont" !important;
@@ -62,4 +62,15 @@
   font-size: 0.6rem;
   position: absolute;
   top: 0;
+}
+.icon_edit {
+  position: relative;
+}
+.icon_edit::before {
+  content: "\e61e";
+  color: #fff;
+  font-size: .52rem;
+  position: absolute;
+  top: 0;
+  right: 0;
 }

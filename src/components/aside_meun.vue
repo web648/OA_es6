@@ -2,16 +2,20 @@
   <div class="meun">
       <li class="icon icon_meun" @click="show_meun()"></li>
       <div class="meun_box" v-show="is_show">
+          <i class="edit icon icon_edit"></i>
           <div class="user">
-              <img src="" alt="user-img">
-              <span>游戏卿年</span>
+              <img src="../assets/img/user.jpg" alt="user-img">
+              <span>{{ user_name }}</span>
           </div>
           <div class="user_progress">
-              <div class="pgs lf">
-                  <p><i class="icon "></i> 还差<b>99</b>经验升级</p>
-                  <p></p>
+              <div class="pgs fl">
+                  <i class="icon "></i> 还差<b>{{ sign_num }}</b>经验升级
+                  <div class="pgs_bar">
+                      <p></p>
+                      <p></p>
+                  </div>
               </div>
-              <div class="sign_in fr">签到</div>
+              <div class="sign_btn fr">签到</div>
           </div>
           <div class="user_num">
               <span><i>6</i>被关注</span>
@@ -19,12 +23,9 @@
               <span><i>99</i>总访问</span>
           </div>
           <ul class="meun_list">
-              <router-link to="" tag="li">礼包兑换</router-link>
-              <router-link to="" tag="li">赛事查票</router-link>
-              <router-link to="" tag="li">周边商城</router-link>
-              <router-link to="" tag="li">我的收藏</router-link>
-              <router-link to="" tag="li">吐槽反馈</router-link>
-              <router-link to="" tag="li">系统设置</router-link>
+              <router-link v-for="item in meunList" :key="item.name" tag="li" :to="item.url">
+                  {{ item.name }}
+              </router-link>
           </ul>
       </div>
 
@@ -37,7 +38,33 @@
 export default {
   data () {
     return {
-        is_show:false,
+        is_show: false,
+        user_name: "游戏卿年",
+        sign_num: 99,
+        meunList:[
+            {
+                name:"礼包兑换",
+                url:"/"
+            },
+            {
+                name:"赛事查票",
+                url:"/"
+            },
+            {
+                name:"周边商城",
+                url:"/"
+            },
+            {
+                name:"我的收藏",
+                url:"/"
+            },{
+                name:"吐槽反馈",
+                url:"/"
+            },{
+                name:"系统设置",
+                url:"/"
+            },
+        ]
     }
   },
   methods:{
@@ -54,13 +81,96 @@ export default {
     position: relative;
     // padding-right: .3rem;
     .meun_box{
-        width: 7rem;
-        height: auto;
-        position: absolute;
-        top: -0.3rem;
-        left: -0.3rem;
+        width: 80%;
+        height: 100%;
+        padding: .5rem;
+        position: fixed;
+        top: 0rem;
+        left: 0rem;
         z-index: 99;
-        background: #e5e5e5;
+        box-sizing: border-box;
+        color: #fff;
+        background: rgba(38, 38, 38, 0.95);
+        .edit{
+            position: absolute !important;
+            top: 0;
+            right: .25rem;
+        }
+        .user{
+            width: 2rem;
+            height: 2rem;
+            text-align: center;
+            margin: 0 auto;
+            img{
+                display: block;
+                width: 1.5rem;
+                height: 1.5rem;
+                margin: 0 auto;
+                border-radius: 50%;
+            }
+            span{
+                font-weight: bold;
+                font-size: .48rem;
+            }
+        }
+        .user_progress{
+            display: block;
+            padding-top: .3rem;
+            overflow: hidden;
+            line-height: .48rem;
+            .pgs{
+                width: 72%;
+                text-align: right;
+                padding-top: .48rem;
+                .pgs_bar{
+                    width: 100%;
+                    p{
+                        height: 5px;
+                        &:first-child{
+                            width: 100%;
+                            margin-top: 5px;
+                            background: #999;
+                        }
+                        &:last-child{
+                            margin-top: -5px;
+                            width: 90%;
+                            background: #f60;
+                        }
+                    }
+                }           
+            }
+            .sign_btn{
+                width: 23%;
+                text-align: center;
+                line-height: .64rem;
+                color: #fff;
+                background: #f60;
+                margin-top: .6rem;
+                border-radius: .05rem;
+            }
+        }
+        .user_num{
+            display: flex;
+            margin: .4rem 0 .3rem;
+            span{
+                flex: 1;
+                justify-content: flex-start;
+                text-align: center;
+                line-height: .52rem;
+                font-size: .12rem;
+                border-left: 1px solid #999;
+                margin-left: -1px;
+                i{  
+                    display: block;
+                    font-size: .36rem;
+                    font-weight: bold;
+                    font-style: normal;
+                }
+                &:first-child{
+                    border: none;
+                }
+            }
+        }
     }
 }
 

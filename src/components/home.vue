@@ -18,33 +18,23 @@
 <script>
   import { Toast, MessageBox, Swipe, SwipeItem } from 'mint-ui'
   import homeContent from '../views/publice/navItem/homeContent'
-export default {
-  name: 'test',
-  data () {
-    return {
-        dataList:[],
+  export default {
+    name: 'test',
+    data () {
+      return {
+          dataList:[],
+      }
+    },
+    components:{
+      homeContent
+    },
+    mounted() {
+      
+    },
+    methods:{
+      
     }
-  },
-  components:{
-    homeContent
-  },
-  mounted() {
-      // GET /someUrl
-      // this.$http.get('/api/test', {
-      //   page_no:1,
-      //   page_size:10
-      // }).then(res => {
-      //       this.dataList = res.body.data;
-      //       console.log(res);
-
-      // }, res => {
-      //     Toast("数据请求失败，请稍后再试")
-      // });
-  },
-  methods:{
-    
   }
-}
 </script>
 
 <style scoped lang="less">

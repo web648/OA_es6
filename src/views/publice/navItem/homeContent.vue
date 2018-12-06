@@ -1,18 +1,23 @@
 <template>
     <div>
-        <ul class="centent_list">
-            <router-link to="/" tag="li" v-for="item in dataList" :key="item.key" class="lists">
-                <div class="list_left fl">
-                    <p>{{ item.title }}</p>
-                    <span><i class="time fl">11/26</i> <i class="icon icon_visit visit_num fr">{{ item.visit_num }}</i><i class="icon icon_reply reply_num fr">{{ item.reply_num }}</i></span>
-                </div>
-                <img :src="item.img_url" alt="" class="list_right fr">
-            </router-link>
-        </ul>
+        <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="false" ref="loadmore">
+            <ul class="centent_list">
+                <router-link to="/" tag="li" v-for="item in dataList" :key="item.key" class="lists">
+                    <div class="list_left fl">
+                        <p>{{ item.title }}</p>
+                        <span><i class="time fl">11/26</i> <i class="icon icon_visit visit_num fr">{{ item.visit_num }}</i><i class="icon icon_reply reply_num fr">{{ item.reply_num }}</i></span>
+                    </div>
+                    <img :src="item.img_url" alt="" class="list_right fr">
+                </router-link>
+            </ul>
+        </mt-loadmore>
+
     </div>
 </template>
 
 <script>
+    import { Loadmore, InfiniteScroll } from 'mint-ui'
+
     export default {
         data(){
             return{
@@ -21,20 +26,35 @@
         },
         mounted() {
             // GET /someUrl
-            this.$http.get('/api/test', {
-                page_no:1,
-                page_size:10
-            }).then(res => {
-                    this.dataList = res.body.data;
-                    console.log(res);
-
-            }, res => {
-                Toast("数据请求失败，请稍后再试")
-            });
+            this.AjaxData();
+            
         },
+        // components:{
+        //     Loadmore
+        // },
+        methods:{
+            AjaxData(){
+                this.$http.get('/api/test', {
+                    page_no:1,
+                    page_size:10
+                }).then(res => {
+                        this.dataList = res.body.data;
+                        console.log(res);
+
+                }, res => {
+                    Toast("数据请求失败，请稍后再试")
+                });
+            },
+            loadTop(){
+                this.AjaxData();
+            },
+            loadBottom(){
+                console.log("loadBottom");
+                this.AjaxData();
+            },
+        }
     }
 </script>
-
 <style scoped lang="less">
     .centent_list{
         overflow: hidden;
