@@ -9,13 +9,13 @@
           </div>
           <div class="user_progress">
               <div class="pgs fl">
-                  <i class="icon "></i> 还差<b>{{ sign_num }}</b>经验升级
+                  <i class="icon"></i> 还差<b>{{ sign_num }}</b>经验升级
                   <div class="pgs_bar">
                       <p></p>
                       <p></p>
                   </div>
               </div>
-              <div class="sign_btn fr">签到</div>
+              <div :class="signBtn_style" @click="signBtn()">{{ sign_text }}</div>
           </div>
           <div class="user_num">
               <span><i>6</i>被关注</span>
@@ -23,7 +23,7 @@
               <span><i>99</i>总访问</span>
           </div>
           <ul class="meun_list">
-              <router-link v-for="item in meunList" :key="item.name" tag="li" :to="item.url">
+              <router-link v-for="item in meunList" :key="item.name" tag="li" :class="item.className" :to="item.url">
                   {{ item.name }}
               </router-link>
           </ul>
@@ -38,31 +38,39 @@
 export default {
   data () {
     return {
-        is_show: false,
+        is_show: true,
         user_name: "游戏卿年",
-        sign_num: 99,
+        sign_num: 19,
+        sign_text: "签到",
+        signBtn_style:"sign_btn fr",
         meunList:[
             {
                 name:"礼包兑换",
-                url:"/"
+                url:"/",
+                className:"icon icon_gift",
             },
             {
                 name:"赛事查票",
-                url:"/"
+                url:"/",
+                className:"icon icon_ticket",
             },
             {
                 name:"周边商城",
-                url:"/"
+                url:"/",
+                className:"icon icon_store",
             },
             {
                 name:"我的收藏",
-                url:"/"
+                url:"/",
+                className:"icon icon_collect",
             },{
                 name:"吐槽反馈",
-                url:"/"
+                url:"/",
+                className:"icon icon_feedback",
             },{
                 name:"系统设置",
-                url:"/"
+                url:"/",
+                className:"icon icon_setting",
             },
         ]
     }
@@ -71,6 +79,13 @@ export default {
     show_meun(){
         console.log(this.is_show);
         this.is_show = this.is_show== false ? true : false; 
+    },
+    signBtn(){
+        if( this.sign_text == "签到"){
+            this.sign_num -= 5;
+            this.sign_text = "已签到";
+            this.signBtn_style = "sign_btn sign_btn_active fr";
+        }else{ Toast("签到成功，请明天再来")}
     }
   }
 }
@@ -83,7 +98,7 @@ export default {
     .meun_box{
         width: 80%;
         height: 100%;
-        padding: .5rem;
+        padding: 1rem .5rem .3rem;
         position: fixed;
         top: 0rem;
         left: 0rem;
@@ -91,6 +106,7 @@ export default {
         box-sizing: border-box;
         color: #fff;
         background: rgba(38, 38, 38, 0.95);
+        box-shadow: .1rem .1rem 3rem #000;
         .edit{
             position: absolute !important;
             top: 0;
@@ -148,10 +164,13 @@ export default {
                 margin-top: .6rem;
                 border-radius: .05rem;
             }
+            .sign_btn_active{
+                background: rgb(192, 192, 192) !important;
+            }
         }
         .user_num{
             display: flex;
-            margin: .4rem 0 .3rem;
+            margin: .5rem 0 .4rem;
             span{
                 flex: 1;
                 justify-content: flex-start;
@@ -169,6 +188,14 @@ export default {
                 &:first-child{
                     border: none;
                 }
+            }
+        }
+        .meun_list{
+            // overflow: hidden;
+            li{
+                color: #fff;
+                font-size: .32rem;
+                padding-left: .5rem;
             }
         }
     }
