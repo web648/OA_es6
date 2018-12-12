@@ -2,7 +2,7 @@
   <div class="meun">
       <li class="icon icon_meun" @click="show_meun()"></li>
       <div class="meun_box" v-show="is_show">
-          <i class="edit icon icon_edit"></i>
+          <router-link to="/editUser" tag="li" class="edit icon icon_edit"></router-link>
           <div class="user">
               <img src="../assets/img/user.jpg" alt="user-img">
               <span>{{ user_name }}</span>

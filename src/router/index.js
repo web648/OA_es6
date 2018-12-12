@@ -12,6 +12,7 @@ import user from '../views/publice/navItem/user.vue'
 import login from '../views/publice/login/login'
 import register from '../views/publice/login/register'
 import nodata from '../views/publice/nodata'
+import editUser from '../views/page/settings/editUser'
 
 
 // export default new Router({})
@@ -72,6 +73,11 @@ const router = new Router({
       name: 'nodata',
       component: nodata
     },
+    {
+      path: '/editUser',
+      name: 'editUser',
+      component: editUser
+    }
     
   ]
 });
