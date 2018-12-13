@@ -38,7 +38,7 @@
 export default {
   data () {
     return {
-        is_show: true,
+        is_show: false,
         user_name: "游戏卿年",
         sign_num: 19,
         sign_text: "签到",
@@ -74,6 +74,28 @@ export default {
             },
         ]
     }
+  },
+  mounted() {
+      let meun_box = document.querySelector(".meun_box"),
+          startPosition, endPosition, deltaX ;
+      document.addEventListener("touchstart",(evt)=>{
+          let T = evt.touches[0];
+          startPosition = {
+            x: T.pageX,
+            y: T.pageY
+          }    
+      });
+      document.addEventListener("touchmove",(evt)=>{
+          let T = evt.touches[0];
+          endPosition = {
+            x: T.pageX,
+            y: T.pageY
+          } 
+        // console.log(startPosition.x, endPosition.x)
+          if((startPosition.x - endPosition.x) > 100 ){
+              this.is_show =  false; 
+          }    
+      });
   },
   methods:{
     show_meun(){
