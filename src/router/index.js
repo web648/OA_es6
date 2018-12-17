@@ -12,7 +12,7 @@ import user from '../views/publice/navItem/user.vue'
 import login from '../views/publice/login/login'
 import register from '../views/publice/login/register'
 import nodata from '../views/publice/nodata'
-import editUser from '../views/page/settings/editUser'
+import editUser from '../views/pages/settings/editUser'
 
 
 // export default new Router({})

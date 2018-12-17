@@ -1,33 +1,35 @@
 <template>
   <div class="meun">
       <li class="icon icon_meun" @click="show_meun()"></li>
-      <div class="meun_box" v-show="is_show">
-          <router-link to="/editUser" tag="li" class="edit icon icon_edit"></router-link>
-          <div class="user">
-              <img src="../assets/img/user.jpg" alt="user-img">
-              <span>{{ user_name }}</span>
-          </div>
-          <div class="user_progress">
-              <div class="pgs fl">
-                  <i class="icon"></i> 还差<b>{{ sign_num }}</b>经验升级
-                  <div class="pgs_bar">
-                      <p></p>
-                      <p></p>
-                  </div>
-              </div>
-              <div :class="signBtn_style" @click="signBtn()">{{ sign_text }}</div>
-          </div>
-          <div class="user_num">
-              <span><i>6</i>被关注</span>
-              <span><i>43</i>今日访问</span>
-              <span><i>99</i>总访问</span>
-          </div>
-          <ul class="meun_list">
-              <router-link v-for="item in meunList" :key="item.name" tag="li" :class="item.className" :to="item.url">
-                  {{ item.name }}
-              </router-link>
-          </ul>
-      </div>
+      <transition name="meun">
+        <div class="meun_box" v-show="is_show">
+            <router-link to="/editUser" tag="li" class="edit icon icon_edit"></router-link>
+            <div class="user">
+                <img src="../assets/img/user.jpg" alt="user-img">
+                <span>{{ user_name }}</span>
+            </div>
+            <div class="user_progress">
+                <div class="pgs fl">
+                    <i class="icon"></i> 还差<b>{{ sign_num }}</b>经验升级
+                    <div class="pgs_bar">
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+                <div :class="signBtn_style" @click="signBtn()">{{ sign_text }}</div>
+            </div>
+            <div class="user_num">
+                <span><i>6</i>被关注</span>
+                <span><i>43</i>今日访问</span>
+                <span><i>99</i>总访问</span>
+            </div>
+            <ul class="meun_list">
+                <router-link v-for="item in meunList" :key="item.name" tag="li" :class="item.className" :to="item.url">
+                    {{ item.name }}
+                </router-link>
+            </ul>    
+        </div>        
+      </transition>
 
   </div>
 
@@ -221,6 +223,17 @@ export default {
             }
         }
     }
+}
+.meun-enter-active {
+  transition: all .3s ease;
+}
+.meun-leave-active {
+//   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .3s ease;
+}
+.meun-enter, .meun-leave-to {
+  transform: translateX(-1rem);
+  opacity: 0;
 }
 
 </style>

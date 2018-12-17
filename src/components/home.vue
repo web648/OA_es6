@@ -8,7 +8,7 @@
     </div>
     <div class="to_vote">
       <h3><b class="icon icon_vote"></b>[投票]本周六，极品装备任性领  </h3>
-      <img src="../assets/img/to_vote.jpg" alt="top_banner" width="100%">
+      <img src="../assets/img/top_vote.jpg" alt="top_banner" width="100%">
     </div>
     <homeContent></homeContent>
   </div>
