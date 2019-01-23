@@ -1,4 +1,4 @@
-# oa_es6
+# game_info
 
 > A Vue.js project
 
