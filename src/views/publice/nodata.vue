@@ -2,7 +2,6 @@
     <div class="my_header">
             <span>页面跑丢了</span>
 
-            </span> 
     </div>
 </template>
 
