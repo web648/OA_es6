@@ -3,7 +3,7 @@
     <v-header></v-header>
     <v-banner></v-banner>
     <div class="top_banner">
-      <h3><i>置顶</i>本周六，超多绝版道具，神器限时免费送，送，送  </h3>
+      <h3 ref="test_h3"><i>置顶</i>本周六，超多绝版道具，神器限时免费送，送，送  </h3>
       <img src="../assets/img/top_banner.jpg" alt="top_banner" width="100%">
     </div>
     <div class="to_vote">
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  import { Toast, MessageBox, Swipe, SwipeItem } from 'mint-ui'
+  // import { Toast, MessageBox, Swipe, SwipeItem } from 'mint-ui'
   import homeContent from '../views/publice/navItem/homeContent'
   export default {
     name: 'test',
@@ -29,6 +29,10 @@
       homeContent
     },
     mounted() {
+      console.log(this.$refs.test_h3,"this.$refs");
+      console.log(this.$children,"this.$children");
+      console.log(this.$root,"this.$root");
+      
       
     },
     methods:{

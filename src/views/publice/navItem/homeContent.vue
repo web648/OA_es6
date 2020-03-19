@@ -1,6 +1,6 @@
 <template>
     <div>
-        <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="false" ref="loadmore">
+        <!-- <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="false" ref="loadmore">
             <ul class="centent_list">
                 <router-link to="/" tag="li" v-for="item in dataList" :key="item.key" class="lists">
                     <div class="list_left fl">
@@ -10,13 +10,13 @@
                     <img :src="item.img_url" alt="" class="list_right fr">
                 </router-link>
             </ul>
-        </mt-loadmore>
+        </mt-loadmore> -->
 
     </div>
 </template>
 
 <script>
-    import { Loadmore, InfiniteScroll } from 'mint-ui'
+    // import { Loadmore, InfiniteScroll } from 'mint-ui'
 
     export default {
         data(){

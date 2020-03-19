@@ -12,6 +12,7 @@
             <i class="icon icon_addImg" @click="addImg_btn()"></i>
             <input type="file" name="upfile" hidden id="upfile" accept="image/png,image/jpg">
         </div>
+        <div class="test" id="test1"></div>
         <div class="clear_both"></div>
         <ul>
             <mt-field label="社区ID" placeholder="" readonly v-model="communityID"></mt-field>
@@ -35,7 +36,7 @@
 </template>
 
 <script>
-    import { Header, Popup } from 'mint-ui';
+    // import { Header, Popup } from 'mint-ui';
     export default {
         data(){
             return {
@@ -73,6 +74,12 @@
 </script>
 
 <style lang="less" scoped>
+.test{
+    width: 3rem;
+    height: 1rem;
+    background: #f60;
+    margin: 0 auto;
+}
 .editUser{
     color: #b3b3b3;
     .add_img{

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import { Actionsheet } from "mint-ui"
+    // import { Actionsheet } from "mint-ui"
  export default {
      data(){
          return{
