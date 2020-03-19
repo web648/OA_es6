@@ -10,8 +10,8 @@
                     <img :src="item.img_url" alt="" class="list_right fr">
                 </router-link>
             </ul>
-        </mt-loadmore> -->
-
+        </mt-loadmore>
+        <div @click="changeParentFn">子组件向父组件传值测试</div>
     </div>
 </template>
 
@@ -19,20 +19,32 @@
     // import { Loadmore, InfiniteScroll } from 'mint-ui'
 
     export default {
+        props:{
+             parentData:{
+                 type:String,
+                 required:true,
+             }   
+        },
         data(){
             return{
-              dataList:[],  
+              dataList:[],
+              childData:"子组件数据",  
             }
+
         },
         mounted() {
             // GET /someUrl
             this.AjaxData();
+            console.log(this.parentData,"父组件数据");
             
         },
         // components:{
         //     Loadmore
         // },
         methods:{
+            changeParentFn(){
+                this.$emit("childToParent","子组件向父组件传值");
+            },
             AjaxData(){
                 this.$http.get('/api/test', {
                     page_no:1,
